@@ -12,6 +12,8 @@ import { Link } from 'react-router-dom';
 import TableComponent from '../Table/TableComponent';
 import DummyFormComponent from '../DummyForm/DummyFormComponent';
 
+const username = localStorage.getItem('username');
+
 class Home extends Component {
 
     constructor(props) {
@@ -20,6 +22,10 @@ class Home extends Component {
             name: 'Anonymous',
             isOpen:false
         }
+    }
+
+    handleLogOut=()=>{
+        localStorage.clear();
     }
 
     toggleNavbar = ()=>{
@@ -33,12 +39,12 @@ class Home extends Component {
         return (
             <Fragment>
                 <Navbar color="dark" dark expand="md">
-                    <NavbarBrand href="/" className="home-link">{this.state.name}</NavbarBrand>
+                    <NavbarBrand href="/" className="home-link">{username}</NavbarBrand>
                     <NavbarToggler onClick={this.toggleNavbar} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="mr-auto" navbar>
                             <NavItem>
-                                <Link to="/login" className="home-link">Logout</Link>
+                                <Link to="/login" className="home-link" onClick={this.handleLogOut}>Logout</Link>
                             </NavItem>
                         </Nav>
 

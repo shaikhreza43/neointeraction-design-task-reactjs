@@ -27,9 +27,31 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: '',
+            username: '',
             password: ''
         }
+    }
+
+    handleChange = (e) => {
+        this.setState({ [e.target.name]: e.target.value });
+    }
+
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        const requestBody = {
+            username: this.state.username,
+            password: this.state.password
+        }
+
+        fetch('https://b905e116-1f67-4330-bbbc-5f83bd1bd458.mock.pstmn.io/login',
+         {method: 'POST', body: JSON.stringify(requestBody), headers: { 'Content-Type': 'application/json' }})
+         .then(res=>res.json())
+         .then(data=>{
+             localStorage.setItem('jwt',data.jwt);
+             localStorage.setItem('username',requestBody.username);
+             window.location="/";
+         })
     }
 
     render() {
@@ -46,8 +68,11 @@ class Login extends Component {
 
                                     <Col lg="12">
                                         <FormGroup>
-                                            <Label for="email">Email</Label>
-                                            <Input type="text" name="email" placeholder="Enter Email..."></Input>
+                                            <Label for="username">Username</Label>
+                                            <Input type="text"
+                                                name="username"
+                                                placeholder="Enter Username..."
+                                                onChange={this.handleChange}></Input>
                                         </FormGroup>
                                     </Col>
 
@@ -55,7 +80,9 @@ class Login extends Component {
                                     <Col lg="12">
                                         <FormGroup>
                                             <Label for="password">Password</Label>
-                                            <Input type="password" name="password" placeholder="Enter Password..."></Input>
+                                            <Input type="password" name="password"
+                                                placeholder="Enter Password..."
+                                                onChange={this.handleChange}></Input>
                                         </FormGroup>
                                     </Col>
 
