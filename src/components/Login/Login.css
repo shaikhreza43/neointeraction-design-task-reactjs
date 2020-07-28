@@ -1,0 +1,6 @@
+div.random-image-div{
+background-image:url(https://source.unsplash.com/random);
+background-position:center;
+background-size:cover;
+background-repeat: no-repeat;
+}
