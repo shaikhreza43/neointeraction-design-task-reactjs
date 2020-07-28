@@ -22,7 +22,7 @@ class TableComponent extends Component {
 
     addRow=()=>{
        var  rows = this.state.data;
-       rows.push({id:5,name:"hjdhfjd",email:"kknxhjc"});
+       rows.push({id:5,name:"dummy name",email:"dummy_email@email.com"});
        this.setState({data:rows});
     }
 

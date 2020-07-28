@@ -10,6 +10,7 @@ import {
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import TableComponent from '../Table/TableComponent';
+import DummyFormComponent from '../DummyForm/DummyFormComponent';
 
 class Home extends Component {
 
@@ -45,6 +46,7 @@ class Home extends Component {
                 </Navbar>
 
                 <TableComponent/>
+                <DummyFormComponent/>
             </Fragment>
         )
     }
