@@ -47,14 +47,18 @@ class Register extends Component {
                                 <Col lg="12">
                                         <FormGroup>
                                             <Label for="username">Username</Label>
-                                            <Input type="text" name="username" placeholder="Enter Username..."></Input>
+                                            <Input type="text" name="username"
+                                             placeholder="Enter Username..."
+                                             required={true}></Input>
                                         </FormGroup>
                                     </Col>
 
                                     <Col lg="12">
                                         <FormGroup>
                                             <Label for="email">Email</Label>
-                                            <Input type="text" name="email" placeholder="Enter Email..."></Input>
+                                            <Input type="text" name="email"
+                                             placeholder="Enter Email..."
+                                             required={true}></Input>
                                         </FormGroup>
                                     </Col>
 
@@ -62,7 +66,9 @@ class Register extends Component {
                                     <Col lg="12">
                                         <FormGroup>
                                             <Label for="password">Password</Label>
-                                            <Input type="password" name="password" placeholder="Enter Password..."></Input>
+                                            <Input type="password" name="password"
+                                             placeholder="Enter Password..."
+                                             required={true}></Input>
                                         </FormGroup>
                                     </Col>
 

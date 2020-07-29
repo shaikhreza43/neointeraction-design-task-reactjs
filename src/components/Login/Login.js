@@ -72,7 +72,8 @@ class Login extends Component {
                                             <Input type="text"
                                                 name="username"
                                                 placeholder="Enter Username..."
-                                                onChange={this.handleChange}></Input>
+                                                onChange={this.handleChange}
+                                                required={true}></Input>
                                         </FormGroup>
                                     </Col>
 
@@ -82,7 +83,8 @@ class Login extends Component {
                                             <Label for="password">Password</Label>
                                             <Input type="password" name="password"
                                                 placeholder="Enter Password..."
-                                                onChange={this.handleChange}></Input>
+                                                onChange={this.handleChange}
+                                                required={true}></Input>
                                         </FormGroup>
                                     </Col>
 
