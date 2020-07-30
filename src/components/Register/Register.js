@@ -27,6 +27,7 @@ class Register extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            username:'',
             email: '',
             password: ''
         }
@@ -41,6 +42,7 @@ class Register extends Component {
         e.preventDefault();
         const requestBody = {
             username: this.state.username,
+            email:this.state.email,
             password: this.state.password
         }
 
